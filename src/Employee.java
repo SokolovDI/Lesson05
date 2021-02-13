@@ -7,25 +7,39 @@
  * Person[] persArray = new Person[5]; // Вначале объявляем массив объектов
  * persArray[0] = new Person("Ivanov Ivan", "Engineer", "ivivan@mailbox.com", "892312312", 30000, 30); // потом для каждой ячейки массива задаем объект
  * persArray[1] = new Person(...);
- * <p>
  * persArray[4] = new Person(...);
  * <p>
  * 5. С помощью цикла вывести информацию только о сотрудниках старше 40 лет.
  */
 
-public class Main {
-    public static void main(String[] args) {
+public class Employee {
+    private String surname;
+    private String name;
+    private String patronymic;
+    private String post;
+    private String email;
+    private String phoneNumber;
+    private int wages;
+    private int age;
 
-        Employee[] employees = {
-                new Employee("Иванов", "Иван", "Иванович", "Директор", "ivanov@emp.ru", "111-11-11", 1000, 55),
-                new Employee("Антонов", "Антон", "Антонович", "Бухгалтер", "antonov@emp.ru", "222-22-22", 900, 45),
-                new Employee("Сергеев", "Сергей", "Сергеевич", "Юрист", "sergeev@emp.ru", "333-33-33", 800, 35),
-                new Employee("Петров", "Петр", "Петрович", "Инженер", "petrov@emp.ru", "444-44-44", 700, 35),
-                new Employee("Николаев", "Николай", "Николаевич", "Менеджер", "nikolaev@emp.ru", "555-55-55", 1000, 30)
-        };
+    public Employee(String surname, String name, String patronymic, String post,
+                    String email, String phoneNumber, int wages, int age) {
+        this.surname = surname;
+        this.name = name;
+        this.patronymic = patronymic;
+        this.post = post;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.wages = wages;
+        this.age = age;
+    }
+    public void getInfo(){
+        System.out.println("Фамилия: " + surname + "\nИмя: "  + name +
+                "\nОтчество: " + patronymic + "\nДолжность: " + post + "\nE-mail: " + email +
+                "\nТелефон: " + phoneNumber + "\nЗарплата: " + wages + "\nВозраст: " + age + "\n");
+    }
 
-        for (Employee i : employees)
-            if (i.getAge() > 40)
-                i.getInfo();
+    public int getAge() {
+        return age;
     }
 }
